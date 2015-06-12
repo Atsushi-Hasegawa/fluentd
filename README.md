@@ -27,9 +27,34 @@ alias sudo="sudo env PATH=$PATH"
 sudo gem install norikra
 ```
 
-### fluentdをインストール
+#### fluentdをインストール
 ```
 sudo gem install fluentd
+```
+
+#### growthforecastをインストール
+- centosの場合
+```
+sudo yum groupinstall "Development Tools"
+sudo yum install pkgconfig glib2-devel gettext libxml2-devel pango-devel cairo-devel
+``` 
+#### cpanmのインストール
+```
+curl -LOk http://xrl.us/cpanm
+sudo chmod +x cpanm
+cpanm local::lib
+cpanm -n GrowthForecast
+```
+
+### perlをインストール
+```
+sudo yum install -y perl-devel
+```
+
+#### growthforecastの起動
+```
+mkdir -p /var/grouwthforecast/data
+growthforecast.pl --data-dir /home/user/growthforecast
 ```
 
 #### norikraの起動・停止
